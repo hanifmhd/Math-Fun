@@ -1,7 +1,17 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
-import {Empty, Home, OnBoarding, SignIn, Splash} from '../pages';
+import {
+  Addition,
+  Empty,
+  Fibonacci,
+  Home,
+  Multiplication,
+  OnBoarding,
+  Primes,
+  SignIn,
+  Splash,
+} from '../pages';
 
 const Stack = createStackNavigator();
 const StackScreen = [
@@ -10,6 +20,10 @@ const StackScreen = [
   {name: 'OnBoarding', component: OnBoarding},
   {name: 'SignIn', component: SignIn},
   {name: 'Splash', component: Splash},
+  {name: 'Addition', component: Addition},
+  // {name: 'Multiplication', component: Multiplication},
+  // {name: 'Primes', component: Primes},
+  // {name: 'Fibonacci', component: Fibonacci},
 ];
 
 export default function Router() {

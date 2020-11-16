@@ -65,7 +65,9 @@ const Home = ({navigation}) => {
               }}>
               <TouchableOpacity
                 style={{flexDirection: 'row'}}
-                onPress={() => navigation.navigate('Empty')}>
+                onPress={() =>
+                  navigation.navigate('Addition', {title: 'Addition'})
+                }>
                 <Icon
                   name={'add-circle-outline'}
                   size={RFValue(80)}
