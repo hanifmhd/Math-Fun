@@ -147,7 +147,9 @@ const Home = ({navigation}) => {
               }}>
               <TouchableOpacity
                 style={{flexDirection: 'row'}}
-                onPress={() => navigation.navigate('Empty')}>
+                onPress={() =>
+                  navigation.navigate('Fibonacci', {title: 'Fibonacci'})
+                }>
                 <Icon
                   name={'infinite-outline'}
                   size={RFValue(80)}

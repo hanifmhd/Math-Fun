@@ -23,7 +23,7 @@ const StackScreen = [
   {name: 'Addition', component: Addition},
   {name: 'Multiplication', component: Multiplication},
   {name: 'Primes', component: Primes},
-  // {name: 'Fibonacci', component: Fibonacci},
+  {name: 'Fibonacci', component: Fibonacci},
 ];
 
 export default function Router() {
