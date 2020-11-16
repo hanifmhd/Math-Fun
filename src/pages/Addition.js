@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import {
   Dimensions,
+  KeyboardAvoidingView,
   SafeAreaView,
+  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
@@ -13,7 +15,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import R from '../configs';
 
 const {width} = Dimensions.get('screen');
-const Additionn = ({navigation, route}) => {
+const Addition = ({navigation, route}) => {
   const [valueX, onChangeValueX] = useState(0);
   const [valueY, onChangeValueY] = useState(0);
   let valueZ = parseFloat(valueX) + parseFloat(valueY);
@@ -40,66 +42,72 @@ const Additionn = ({navigation, route}) => {
           }}>
           {route.params.title}
         </Text>
-        <View style={{alignItems: 'flex-end'}}>
-          <TextInput
-            style={{
-              color: R.colors.baseWhite,
-              fontSize: RFValue(80),
-              fontFamily: R.fonts.NunitoBold,
-              width: width / 2,
-              textAlign: 'right',
-            }}
-            onChangeText={(text) => onChangeValueX(text)}
-            placeholder={'X'}
-            placeholderTextColor={R.colors.baseGrey}
-            value={valueX}
-            keyboardType={'decimal-pad'}
-          />
-          <Icon
-            name={'add-outline'}
-            size={RFValue(100)}
-            color={'#9CE574'}
-            style={{alignSelf: 'center'}}
-          />
-          <TextInput
-            style={{
-              color: R.colors.baseWhite,
-              fontSize: RFValue(80),
-              fontFamily: R.fonts.NunitoBold,
-              width: width / 2,
-              textAlign: 'right',
-            }}
-            onChangeText={(text) => onChangeValueY(text)}
-            placeholder={'Y'}
-            placeholderTextColor={R.colors.baseGrey}
-            value={valueY}
-            keyboardType={'decimal-pad'}
-          />
-          <View
-            style={{
-              backgroundColor: R.colors.baseGrey,
-              height: 2,
-              width: width / 2,
-              marginVertical: RFValue(10),
-            }}
-          />
-          <Text
-            style={{
-              color: R.colors.baseWhite,
-              fontSize: RFValue(80),
-              fontFamily: R.fonts.NunitoBold,
-              width: width / 1.5,
-              textAlign: 'right',
-            }}>
-            {parseFloat(valueZ).toFixed(2)}
-          </Text>
-        </View>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === 'ios' ? 'padding' : null}
+          keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 0}
+          enabled>
+          <ScrollView contentContainerStyle={{alignItems: 'flex-end'}}>
+            <TextInput
+              style={{
+                color: R.colors.baseWhite,
+                fontSize: RFValue(80),
+                fontFamily: R.fonts.NunitoBold,
+                width: width / 2,
+                textAlign: 'right',
+              }}
+              onChangeText={(text) => onChangeValueX(text)}
+              placeholder={'X'}
+              placeholderTextColor={R.colors.baseGrey}
+              value={valueX}
+              keyboardType={'decimal-pad'}
+            />
+            <Icon
+              name={'add-outline'}
+              size={RFValue(100)}
+              color={'#9CE574'}
+              style={{alignSelf: 'center'}}
+            />
+            <TextInput
+              style={{
+                color: R.colors.baseWhite,
+                fontSize: RFValue(80),
+                fontFamily: R.fonts.NunitoBold,
+                width: width / 2,
+                textAlign: 'right',
+              }}
+              onChangeText={(text) => onChangeValueY(text)}
+              placeholder={'Y'}
+              placeholderTextColor={R.colors.baseGrey}
+              value={valueY}
+              keyboardType={'decimal-pad'}
+            />
+            <View
+              style={{
+                backgroundColor: R.colors.baseGrey,
+                height: 2,
+                width: width / 2,
+                marginVertical: RFValue(10),
+              }}
+            />
+            <Text
+              style={{
+                color: R.colors.baseWhite,
+                fontSize: RFValue(80),
+                fontFamily: R.fonts.NunitoBold,
+                width: width / 1.1,
+                textAlign: 'right',
+              }}
+              numberOfLines={1}>
+              {parseFloat(valueZ).toFixed(2)}
+            </Text>
+          </ScrollView>
+        </KeyboardAvoidingView>
       </View>
     </SafeAreaView>
   );
 };
 
-export default Additionn;
+export default Addition;
 
 const styles = StyleSheet.create({
   container: {

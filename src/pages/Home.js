@@ -52,6 +52,7 @@ const Home = ({navigation}) => {
               style={{
                 marginTop: RFValue(10),
                 ...styles.body,
+                fontFamily: R.fonts.NunitoRegular,
               }}>
               Start your practice by picking one of the below
             </Text>
@@ -91,7 +92,11 @@ const Home = ({navigation}) => {
               }}>
               <TouchableOpacity
                 style={{flexDirection: 'row'}}
-                onPress={() => navigation.navigate('Empty')}>
+                onPress={() =>
+                  navigation.navigate('Multiplication', {
+                    title: 'Multiplication',
+                  })
+                }>
                 <Icon
                   name={'close-circle-outline'}
                   size={RFValue(80)}
@@ -202,7 +207,7 @@ const styles = StyleSheet.create({
   },
   body: {
     fontSize: R.sizes.txtBody,
-    fontFamily: R.fonts.NunitoRegular,
+    fontFamily: R.fonts.NunitoItalic,
     color: R.colors.baseWhite,
   },
 });
