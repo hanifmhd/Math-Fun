@@ -22,7 +22,7 @@ const StackScreen = [
   {name: 'Splash', component: Splash},
   {name: 'Addition', component: Addition},
   {name: 'Multiplication', component: Multiplication},
-  // {name: 'Primes', component: Primes},
+  {name: 'Primes', component: Primes},
   // {name: 'Fibonacci', component: Fibonacci},
 ];
 

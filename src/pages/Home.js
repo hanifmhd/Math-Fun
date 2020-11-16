@@ -121,7 +121,9 @@ const Home = ({navigation}) => {
               }}>
               <TouchableOpacity
                 style={{flexDirection: 'row'}}
-                onPress={() => navigation.navigate('Empty')}>
+                onPress={() =>
+                  navigation.navigate('Primes', {title: 'Primes'})
+                }>
                 <Icon
                   name={'git-commit-outline'}
                   size={RFValue(80)}
