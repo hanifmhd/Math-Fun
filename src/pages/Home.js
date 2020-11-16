@@ -1,7 +1,8 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   Alert,
+  BackHandler,
   Dimensions,
   Image,
   ImageBackground,
@@ -9,6 +10,7 @@ import {
   StatusBar,
   StyleSheet,
   Text,
+  ToastAndroid,
   TouchableOpacity,
   View,
 } from 'react-native';
@@ -18,7 +20,31 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import R from '../configs';
 
 const {width, height} = Dimensions.get('screen');
+let backPressed = 0;
 const Home = ({navigation}) => {
+  useEffect(() => {
+    BackHandler.addEventListener('hardwareBackPress', backAction);
+    return () => {
+      BackHandler.removeEventListener('hardwareBackPress', backAction);
+    };
+  }, []);
+
+  const backAction = () => {
+    if (!navigation.isFocused()) {
+      // The screen is not focused, so don't do anything
+      backPressed = 0;
+      return false;
+    }
+
+    if (backPressed <= 0) {
+      ToastAndroid.show('Press back again to close app', ToastAndroid.SHORT);
+      backPressed = backPressed + 1;
+    } else {
+      BackHandler.exitApp();
+    }
+    return true;
+  };
+
   return (
     <View style={styles.container}>
       <StatusBar

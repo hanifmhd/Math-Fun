@@ -30,7 +30,7 @@ const Fibonacci = ({navigation, route}) => {
       let a = 0;
       let b = 1;
       for (i = 0; i < valueX; i++) {
-        arr.push(`${c}${i === valueX - 1 ? '' : ','}`);
+        arr.push(`${c}${i === valueX - 1 ? '' : ', '}`);
         a = b;
         b = c;
         c = a + b;

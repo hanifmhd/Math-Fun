@@ -36,7 +36,7 @@ const Primes = ({navigation, route}) => {
           if (i % c == 0) break;
         }
         if (c == i) {
-          temp = temp + `,${i}`;
+          temp = temp + `, ${i}`;
           count++;
         }
       }
