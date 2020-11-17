@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {
   Dimensions,
   KeyboardAvoidingView,
+  Platform,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -96,8 +97,7 @@ const Addition = ({navigation, route}) => {
                 fontFamily: R.fonts.NunitoBold,
                 width: width / 1.1,
                 textAlign: 'right',
-              }}
-              numberOfLines={1}>
+              }}>
               {parseFloat(valueZ).toFixed(2)}
             </Text>
           </ScrollView>
@@ -116,6 +116,6 @@ const styles = StyleSheet.create({
   },
   canvas: {
     paddingHorizontal: RFValue(20),
-    paddingTop: RFValue(10),
+    paddingTop: Platform.OS === 'android' ? RFValue(30) : RFValue(10),
   },
 });

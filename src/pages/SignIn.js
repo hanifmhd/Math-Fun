@@ -70,7 +70,7 @@ const SignIn = ({navigation}) => {
   return (
     <View style={styles.container}>
       <StatusBar
-        barStyle="light-content"
+        barStyle={'light-content'}
         hidden={false}
         backgroundColor={'transparent'}
         translucent={true}

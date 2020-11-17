@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
   },
   canvas: {
     paddingHorizontal: RFValue(20),
-    paddingTop: RFValue(10),
+    paddingTop: Platform.OS === 'android' ? RFValue(30) : RFValue(10),
   },
   button: {
     justifyContent: 'center',
