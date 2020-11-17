@@ -4,11 +4,12 @@
 
 import 'react-native';
 import React from 'react';
-import App from '../index';
+import OnBoarding from '../src/pages/OnBoarding';
 
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
 
 it('renders correctly', () => {
-  renderer.create(<App />);
+  const tree = renderer.create(<OnBoarding />).toJSON();
+  expect(tree).toMatchSnapshot();
 });

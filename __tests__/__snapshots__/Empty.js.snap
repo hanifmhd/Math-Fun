@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": 1125,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Image
+      resizeMode="contain"
+      source={
+        Object {
+          "testUri": "../../../assets/images/coming_soon.png",
+        }
+      }
+      style={
+        Object {
+          "height": 375,
+          "width": 675,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "marginVertical": 20,
+          "maxWidth": 637.5,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontFamily": "Nunito-Bold",
+            "fontSize": 35,
+            "textAlign": "center",
+          }
+        }
+      >
+        Coming soon
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#555555",
+            "fontFamily": "Nunito-Regular",
+            "fontSize": 24,
+            "textAlign": "center",
+          }
+        }
+      >
+        We are preparing something new
+      </Text>
+    </View>
+  </View>
+</View>
+`;
